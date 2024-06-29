@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { IoTrashSharp } from "react-icons/io5";
 import { format } from 'date-fns';
 import { fr, enUS } from 'date-fns/locale';
+import { api_url } from '../../App';
 
 const AdminProfile = () => {
   const [user] = useAtom(userAtom);
@@ -33,7 +34,7 @@ const AdminProfile = () => {
     }
 
     try {
-      const response = await ky.get('http://localhost:3000/restaurants', {
+      const response = await ky.get(`${api_url}restaurants`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -45,7 +46,7 @@ const AdminProfile = () => {
       setRestaurants(adminRestaurants);
 
       adminRestaurants.forEach(async (restaurant) => {
-        const reservationsResponse = await ky.get(`http://localhost:3000/restaurants/${restaurant.id}/reservations`, {
+        const reservationsResponse = await ky.get(`${api_url}restaurants/${restaurant.id}/reservations`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -67,7 +68,7 @@ const AdminProfile = () => {
     }
 
     try {
-      await ky.delete(`http://localhost:3000/restaurants/${restaurantId}`, {
+      await ky.delete(`${api_url}restaurants/${restaurantId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -89,7 +90,7 @@ const AdminProfile = () => {
     }
 
     try {
-      await ky.delete(`http://localhost:3000/restaurants/${restaurant_id}/reservations/${reservationId}`, {
+      await ky.delete(`${api_url}restaurants/${restaurant_id}/reservations/${reservationId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -133,12 +134,12 @@ const AdminProfile = () => {
 
       <div>
         <h2 className='your-restau'> {t('yourRestau')} </h2>
-        <div className='cards-admin'>
+        < div className='cards-admin'>
           {restaurants.length > 0 ? (
             restaurants.map(restaurant => (
               <div key={restaurant.id} className='solo-card'>
                 <h3 className='title-solo'> <strong> {restaurant.name} </strong> </h3>
-                <img src={restaurant.image_url} alt={restaurant.name} />
+                <img src={restaurant.cover_image_url || restaurant.image_url} alt={restaurant.name} />
                 <p> {t('descriptR')} : {restaurant.description} </p>
                 <p> {t('cityR')} : {restaurant.city} </p>
                 <p> {t('foodR')} : {restaurant.food} </p>

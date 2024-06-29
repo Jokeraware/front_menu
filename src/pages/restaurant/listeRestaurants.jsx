@@ -7,6 +7,7 @@ import { Link, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../../index.scss';
+import { api_url } from '../../App';
 
 const Restaurants = () => {
   const { t } = useTranslation();
@@ -15,6 +16,7 @@ const Restaurants = () => {
   const { city, food } = useParams(); 
   const [selectedCity, setSelectedCity] = useState('');
   const [selectedFood, setSelectedFood] = useState('');
+  
 
   useEffect(() => {
     fetchRestaurants();
@@ -23,7 +25,7 @@ const Restaurants = () => {
   const fetchRestaurants = async () => {
     try {
       const token = user.token;
-      let url = 'http://localhost:3000/restaurants';
+      // let url = 'http://localhost:3000/restaurants'; 
 
       const queryParams = {};
       if (selectedCity) queryParams.city = selectedCity;
@@ -31,7 +33,7 @@ const Restaurants = () => {
 
       const queryString = new URLSearchParams(queryParams).toString();
 
-      const response = await ky.get(`${url}?${queryString}`, {
+      const response = await ky.get(`${api_url}restaurants?${queryString}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -99,7 +101,7 @@ const Restaurants = () => {
         {restaurants.map((restaurant) => (
           <div className="restaurant-card" key={restaurant.id}>
             <Link to={`/restaurant/${restaurant.id}`}>
-              <img className="restaurant-image" src={restaurant.image_url} alt={restaurant.name} />
+              <img className="restaurant-image" src={restaurant.cover_image_url || restaurant.image_url} alt={restaurant.name} />
               <div className="restaurant-content">
                 <h5 className="restaurant-title">{restaurant.name}</h5>
                 <p className="restaurant-description">{restaurant.description}</p>
@@ -107,7 +109,7 @@ const Restaurants = () => {
                 <p className="restaurant-food">{restaurant.food}</p>
                 <div className="restaurant-link-wrapper">
                   <span className="restaurant-link-text">
-                    {t('Découvrez son Menu !')}
+                    {t('menuLink')}
                   </span>
                   <svg className="restaurant-link-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>

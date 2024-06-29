@@ -5,6 +5,7 @@ import ky from "ky";
 import { useTranslation } from "react-i18next";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { api_url } from '../../App';
 
 const Edit = () => {
   const [user, setUser] = useAtom(userAtom);
@@ -17,7 +18,7 @@ const Edit = () => {
     e.preventDefault();
 
     try {
-      const updatedUser = await ky.put(`http://localhost:3000/users/${user.id}`, {
+      const updatedUser = await ky.put(`${api_url}users/${user.id}`, {
         json: {
           user: {
             email,
@@ -49,20 +50,29 @@ const Edit = () => {
   const handleDeleteAccount = async () => {
     if (window.confirm(t('confirmDeleteAccount'))) {
       try {
-        await ky.delete(`http://localhost:3000/users/${user.id}`, {
+        await ky.delete(`${api_url}users/${user.id}`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
         });
 
-        setUser(null);
+        localStorage.removeItem('user');
+
+        // // Identifiez et supprimez les données spécifiques de l'utilisateur dans le localStorage
+        // Object.keys(localStorage).forEach(key => {
+        //   if (key.startsWith('user_')) {
+        //     localStorage.removeItem(key);
+        //   }
+        // });
 
         // Clear cookies or local storage to ensure logout
         document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         document.cookie = "id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
+        setUser(null);
+
         toast.success(t('accountDeleted'));
-        
+
         setTimeout(() => {
           window.location.href = "/";
         }, 1000); 
@@ -90,12 +100,11 @@ const Edit = () => {
           <label> {t('PassConfirm')} </label>
           <input type="password" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} />
         </div>
+        <div className='btn-edit'>
+          <button type="submit"> {t('editR')} </button> | 
+          <button type="button" onClick={handleDeleteAccount} className='btn-del'> {t('delP')} </button>
+        </div>
       </form>
-
-      <div className='btn-edit'>
-        <button type="submit"> {t('editR')} </button> | 
-        <button onClick={handleDeleteAccount} className='btn-del'> {t('delP')} </button>
-      </div>
 
       <ToastContainer />
     </div>
@@ -103,4 +112,3 @@ const Edit = () => {
 };
 
 export default Edit;
-

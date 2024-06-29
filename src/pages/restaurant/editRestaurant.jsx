@@ -6,6 +6,7 @@ import { useAtom } from 'jotai';
 import { userAtom } from '../../atoms';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { api_url } from '../../App';
 
 const EditRestaurant = () => {
   const { id } = useParams();
@@ -15,6 +16,7 @@ const EditRestaurant = () => {
   const [city, setCity] = useState('');
   const [food, setFood] = useState('');
   const [photo, setPhoto] = useState(null);
+  const [coverPhoto, setCoverPhoto] = useState(null);
   const [user] = useAtom(userAtom);
 
   useEffect(() => {
@@ -24,7 +26,7 @@ const EditRestaurant = () => {
   const fetchRestaurant = async () => {
     try {
       const token = user.token;
-      const response = await ky.get(`http://localhost:3000/restaurants/${id}`, {
+      const response = await ky.get(`${api_url}restaurants/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -62,6 +64,11 @@ const EditRestaurant = () => {
     setPhoto(e.target.files[0]);
   };
 
+  const handleCoverFileChange = (e) => {
+    setCoverPhoto(e.target.files[0]);
+  };
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -73,10 +80,11 @@ const EditRestaurant = () => {
       if (photo) {
         formData.append('restaurant[photo]', photo);
       }
+      formData.append('restaurant[cover_photo]', coverPhoto);
 
       const token = user.token;
 
-      const response = await ky.put(`http://localhost:3000/restaurants/${id}`, {
+      const response = await ky.put(`${api_url}restaurants/${id}`, {
         body: formData,
         headers: {
           Authorization: `Bearer ${token}`
@@ -125,6 +133,15 @@ const EditRestaurant = () => {
             type="file"
             onChange={handleFileChange}
             accept="image/*"
+          />
+        </div>
+        <div>
+          <label> {t('coverPicture')} </label>
+          <input
+            type="file"
+            onChange={handleCoverFileChange}
+            accept="image/*"
+            required
           />
         </div>
         <button type="submit"> {t('updateR')} </button>

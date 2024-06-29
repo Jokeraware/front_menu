@@ -5,6 +5,7 @@ import { useAtom } from 'jotai';
 import { userAtom } from '../../atoms';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { api_url } from '../../App';
 
 const CreateRestaurant = () => {
   const { t } = useTranslation('');
@@ -14,6 +15,7 @@ const CreateRestaurant = () => {
   const [city, setCity] = useState('');
   const [food, setFood] = useState('');
   const [photo, setPhoto] = useState(null);
+  const [coverPhoto, setCoverPhoto] = useState(null);
 
   const cities = ['Paris', 'Marseille', 'Toulouse', 'Lyon', 'Bordeaux', 'Lille', 'Montpellier', 'Nice', 'Rennes', 'Rouen', 'Strasbourg', 'Reims'];
   const foods = ['Chinese', 'Japanese', 'Italian', 'French', 'Lebanese', 'Mediterranean', 'Greek', 'Mexican', 'Indian', 'Thaï', 'Korean', 'Vegetarian', 'Fast food'];
@@ -31,6 +33,10 @@ const CreateRestaurant = () => {
     setPhoto(e.target.files[0]);
   };
 
+  const handleCoverFileChange = (e) => {
+    setCoverPhoto(e.target.files[0]);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -42,10 +48,11 @@ const CreateRestaurant = () => {
       formData.append('restaurant[city]', city);
       formData.append('restaurant[food]', food);
       formData.append('restaurant[photo]', photo);
+      formData.append('restaurant[cover_photo]', coverPhoto);
 
       const token = user.token;
 
-      const response = await ky.post('http://localhost:3000/restaurants', {
+      const response = await ky.post(`${api_url}restaurants`, {
         body: formData,
         headers: {
           Authorization: `Bearer ${token}`
@@ -60,10 +67,11 @@ const CreateRestaurant = () => {
       setCity('');
       setFood('');
       setPhoto(null);
-      
+      setCoverPhoto(null);
+
       setTimeout(() => {
         window.location.href = "/";
-      }, 1000); 
+      }, 1000);
 
     } catch (error) {
       console.error('Erreur lors de la création du restaurant : ', error);
@@ -121,6 +129,15 @@ const CreateRestaurant = () => {
             required
           />
         </div>
+        <div>
+          <label> {t('coverPicture')} </label>
+          <input
+            type="file"
+            onChange={handleCoverFileChange}
+            accept="image/*"
+            required
+          />
+        </div>
         <button type="submit"> {t('createR')} </button>
       </form>
 
@@ -130,6 +147,3 @@ const CreateRestaurant = () => {
 };
 
 export default CreateRestaurant;
-
-
-

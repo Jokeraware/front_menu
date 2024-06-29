@@ -7,6 +7,7 @@ import Cookies from 'js-cookie';
 import ky from 'ky';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { api_url } from '../../App';
 
 function Log() {
   const [, setUser] = useAtom(userAtom);
@@ -18,7 +19,7 @@ function Log() {
     event.preventDefault();
 
     try {
-      const response = await ky.post('http://localhost:3000/users/sign_in', {
+      const response = await ky.post(`${api_url}users/sign_in`, {
         json: {
           user: {
             email,
@@ -36,8 +37,8 @@ function Log() {
         isAdmin: user.isAdmin
       });
 
-      Cookies.set('userToken', token); // Changement du nom du cookie à 'adminToken'
-      Cookies.set('userId', user.id); // Changement du nom du cookie à 'adminId'
+      Cookies.set('userToken', token);
+      Cookies.set('userId', user.id);
 
       toast.success(t('log'));
 
