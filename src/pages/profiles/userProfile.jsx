@@ -123,46 +123,54 @@ const UserProfile = () => {
 
   return (
     <div>
-      <h1 className="title-pages"> {t('titleSpaceUser')} </h1>
-      <p>{t('email')}: {user.email}</p>
-      <p>{t('id')}: {user.id}</p>
-
-      <Link to="/edit">
-        <button className='btn-edit-user'> {t('editProfileButton')} </button>
-      </Link>
-
-      <div className='res-us'>
-        <h2> {t('resaUser')} </h2>
-        <ul>
-          {reservations.map(reservation => (
-            <li key={reservation.id}>
-              <div className='user-resa'>
-                <p> {t('resaText')} {reservation.number} {t('pers')}, {t('on')} {formatDate(reservation.date)} {t('at')} {formatTime(reservation.time)} {t('at')}
-                {restaurants[reservation.restaurant_id] && (
-                  <span> {restaurants[reservation.restaurant_id]} </span>
-                )}
-                <button onClick={() => handleDelete(reservation.id)} className="btn-comm"> <IoTrashSharp /> </button>
-                </p>
-              </div>
-            </li>
-          ))}
-        </ul>
+    <h1 className="title-pages"> {t('titleSpaceUser')} </h1>
+  
+    <div className="button-card-container">
+      <div className="button-card">
+        <Link to="/edit">
+          <button className="btn-edit-user"> {t('editProfileButton')} </button>
+        </Link>
       </div>
-
-      <div className='favs'>
-      <h2>{t('myFav')}</h2>
-        {favorites.map(favorite => (
-          <div key={favorite.id} className='restau-fav'>
-            {favorite.restaurant.name}
-            <button onClick={() => removeFavorite(favorite.id)} className="btn-fav">
-              <FaHeartBroken />
-            </button>
+    </div>
+  
+    <div className="res-us">
+      <h2> {t('resaUser')} </h2>
+      <div className='ul-resa'>
+        {reservations.map(reservation => (
+          <div key={reservation.id} className='li-resa'>
+            <div className="card-resa">
+              <div className="textBox-resa">
+                <div className="textContent-resa">
+                  <p className="span-resa"> {t('resaText')} {reservation.number} {t('pers')} {t('on')} {formatDate(reservation.date)} {t('at')} {formatTime(reservation.time)} {t('at2')} {restaurants[reservation.restaurant_id] && (
+                      <span className='h1-resa'> {restaurants[reservation.restaurant_id]} </span>
+                    )} </p>
+                </div>
+                <div className='btn-resa'>
+                  <button onClick={() => handleDelete(reservation.id)}>
+                    <IoTrashSharp />
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
-
-      <ToastContainer/>
     </div>
+  
+    <div className="favs">
+      <h2>{t('myFav')}</h2>
+      {favorites.map(favorite => (
+        <div key={favorite.id} className="restau-fav">
+          {favorite.restaurant.name}
+          <button onClick={() => removeFavorite(favorite.id)} className="btn-fav">
+            <FaHeartBroken />
+          </button>
+        </div>
+      ))}
+    </div>
+  
+    <ToastContainer />
+  </div>
   );
 };
 

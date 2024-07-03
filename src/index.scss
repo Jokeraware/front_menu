@@ -1,28 +1,10 @@
 /* Imports */
-@import "node_modules/bootswatch/dist/zephyr/variables"; 
 @import "node_modules/bootstrap/scss/bootstrap";
-@import "node_modules/bootswatch/dist/zephyr/bootswatch"; 
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
-
-
-/* Fonts */
-@font-face {
-  font-family: 'OpenDyslexic';
-  src: url('src/assets/fonts/OpenDyslexic3-Regular.ttf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'OpenDyslexic';
-  src: url('src/assets/fonts/OpenDyslexic3-Bold.ttf') format('opentype');
-  font-weight: bold;
-  font-style: normal;
-}
 
 
 /* Variables */
@@ -34,17 +16,6 @@ $title-icons-night: #FFC40C;
 $font: "Raleway", sans-serif;
 $title-font: "Overlock", sans-serif;
 
-
-/* START OPENDYS STYLES */
-body.dyslexic {
-  font-family: 'OpenDyslexic';
-}
-
-.toggle-btn.dyslexic {
-  font-family: 'OpenDyslexic';
-  font-size: 50%;
-}
-/* END OPENDYS STYLES */
 
 
 /* COLOR THEMES */
@@ -181,185 +152,6 @@ html.nuit .card-avatar-team {
   margin-bottom: 4%;
 }
 /* END GENERALS */
-
-
-
-/* START MEDIA QUERY */
-@media (max-width: 515px) {
-  .navbar {
-    flex-direction: column;
-    font-size: 1em;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .nav-links p,
-  .nav-links img,
-  .nav-links .btn-dropdown {
-    margin: 10px 0;
-  }
-
-  .nav-links p {
-    margin-left: 15%;
-  }
-
-  .nav-links .btn-dropdown {
-   margin-left: 18%; 
-  }
-
-  .nav-links img {
-    width: 35%;
-    margin-left: 38%;
-  }
-
-  .switch {
-    width: 70px;
-    height: 35px;
-    margin-right: 75%;
-  }
-
-  .slider:before {
-    height: 25px;
-    width: 25px;
-    line-height: 20px;
-  }
-
-  .theme-toggler {
-    font-size: 1.2em;
-    padding-right: 5px;
-    margin-right: 2%;
-  }
-
-  .sidebar {
-    width: 100%;
-    height: 40%;
-    right: -100%;
-  }
-
-  .sidebar.active {
-    right: 0;
-  }
-
-  .toggle-btn {
-    margin-right: 0;
-    height: 20%;
-    width: auto;
-    font-size: 0.7rem;
-    padding: 5px;
-  }
-
-  ul {
-    width: 100%;
-  }
-
-  li {
-    padding: 5px;
-  }
-
-  .concept-cards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card-concept {
-    margin-bottom: 5%;
-  }
-}
-/* END MEDIA QUERY */
-
-
-
-/* START SIDEBAR */
-.app-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100%;
-  position: relative;
-}
-
-.sidebar {
-  width: 250px;
-  height: 20%;
-  position: fixed;
-  top: 50%;
-  right: -250px;
-  background-color: $bg-light-font-night;
-  color: $title-icons-light;
-  transform: translateY(-50%);
-  transition: left 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sidebar.active {
-  display: flex;
-  justify-content: space-evenly;
-  right: 0;
-  background-color: transparent;
-
-  .dys-text {
-    color: $font-light;
-  }
-}
-
-html.nuit .sidebar.active {
-  background-color: transparent;
-
-  .dys-text {
-    color: $bg-light-font-night;
-  }
-}
-
-.toggle-btn {
-  position: fixed;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  background-color: $title-icons-light;
-  color: $bg-light-font-night;
-  border: none;
-  padding: 0.7%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 28%;
-  width: 1%;
-  border-radius: 10px 0 0 10px;
-  text-align: center;
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  font-family: $font;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.toggle-btn:focus {
-  outline: none;
-}
-
-.toggle-btn.nuit {
-  background-color: $title-icons-night;
-  color: $bg-night;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  padding: 10px;
-  border-bottom: 1px solid $font-light;
-}
-/* END SIDEBAR */
 
 
 
@@ -504,7 +296,6 @@ li {
   }
 }
 
-
 .btn-dropdown {
   padding-right: 10%;
 }
@@ -553,6 +344,74 @@ li {
   padding-right: 8px;
   margin-right: 1%;
 }
+
+@media (max-width: 1310px) {
+  .navbar {
+    flex-direction: column;
+    font-size: 1em;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links p,
+  .nav-links img,
+  .nav-links .btn-dropdown {
+    margin: 10px 0;
+  }
+
+  .nav-links p {
+    margin-left: 15%;
+  }
+
+  .nav-links .btn-dropdown {
+   margin-left: 18%; 
+  }
+
+  .nav-links img {
+    width: 35%;
+    margin-left: 38%;
+  }
+
+  .switch {
+    width: 70px;
+    height: 35px;
+    margin-right: 75%;
+  }
+
+  .slider:before {
+    height: 25px;
+    width: 25px;
+    line-height: 20px;
+  }
+
+  .theme-toggler {
+    font-size: 1.2em;
+    padding-right: 5px;
+    margin-right: 2%;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 40%;
+    right: -100%;
+  }
+
+  .sidebar.active {
+    right: 0;
+  }
+
+  .toggle-btn {
+    margin-right: 0;
+    height: 20%;
+    width: auto;
+    font-size: 0.7rem;
+    padding: 5px;
+  }
+}
 /* END NAVBAR */
 
 
@@ -565,7 +424,7 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10%;
+  margin-top: 15%;
 
 }
 
@@ -613,6 +472,7 @@ li {
 .concept-cards {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   margin-top: 10%;
 }
 
@@ -620,6 +480,7 @@ li {
   width: 300px;
   height: 200px;
   perspective: 1000px;
+  margin: 10px;
 }
 
 .card-inner-concept {
@@ -669,6 +530,72 @@ li {
     text-align: center;
   }
 }
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .concept-cards {
+    justify-content: space-between;
+  }
+
+  .card-concept {
+    width: 250px;
+    height: 175px;
+  }
+
+  .card-front-concept,
+  .card-back-concept {
+    border-width: 8px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .concept-cards {
+    justify-content: center;
+  }
+
+  .card-concept {
+    width: 220px;
+    height: 150px;
+  }
+
+  .card-front-concept,
+  .card-back-concept {
+    border-width: 6px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .concept-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-concept {
+    width: 200px;
+    height: 140px;
+  }
+
+  .card-front-concept,
+  .card-back-concept {
+    border-width: 5px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-concept {
+    width: 180px;
+    height: 120px;
+  }
+
+  .card-front-concept,
+  .card-back-concept {
+    border-width: 4px;
+    font-size: 14px;
+  }
+}
 /* END PAGE CONCEPT */
 
 
@@ -679,6 +606,7 @@ li {
   flex-direction: row;
   justify-content: space-around;
   margin-top: 10%;
+  flex-wrap: wrap;
 }
 
 .card-team {
@@ -689,18 +617,19 @@ li {
   border-radius: 15px;
   padding: 2rem 1.5rem;
   transition: box-shadow .3s ease, transform .2s ease;
- }
- 
- .card-info-team {
+  margin: 1rem; /* Ajouté pour espacer les cartes */
+}
+
+.card-info-team {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 8%;
   transition: transform .2s ease, opacity .2s ease;
- }
+}
 
- .card-avatar-team {
+.card-avatar-team {
   --size: 90px;
   background: linear-gradient(to top, $title-icons-light 0%, #fcbc97 100%);
   width: var(--size);
@@ -708,59 +637,137 @@ li {
   border-radius: 50%;
   transition: transform .2s ease;
   margin-bottom: 1rem;
- }
+}
 
- .card-social {
+.card-social {
   transform: translateY(200%);
   display: flex;
   justify-content: space-around;
   width: 100%;
   opacity: 0;
   transition: transform .2s ease, opacity .2s ease;
- }
+}
 
- .card-social__item svg {
+.card-social__item svg {
   display: block;
   height: 18px;
   width: 18px;
   fill: $font-light;
   cursor: pointer;
-  transition: fill 0.2s ease ,transform 0.2s ease;
- }
+  transition: fill 0.2s ease, transform 0.2s ease;
+}
 
- .card-title-team {
+.card-title-team {
   color: $font-light;
   font-size: 2em;
   font-weight: 600;
   line-height: 2rem;
- }
+}
 
- .card-subtitle-team {
+.card-subtitle-team {
   color: $title-icons-light;
   font-size: 1em;
- }
+}
 
- .card-team:hover {
+.card-team:hover {
   box-shadow: 0 8px 50px #23232333;
- }
+}
 
- .card-team:hover .card-info-team {
+.card-team:hover .card-info-team {
   transform: translateY(-5%);
- }
+}
 
- .card-team:hover .card-social {
+.card-team:hover .card-social {
   transform: translateY(100%);
   opacity: 1;
- }
+}
 
- .card-social__item svg:hover {
+.card-social__item svg:hover {
   fill: $title-icons-light;
   transform: scale(1.1);
- }
+}
 
- .card-avatar-team:hover {
+.card-avatar-team:hover {
   transform: scale(1.1);
- }
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .team-cards {
+    justify-content: space-evenly;
+  }
+
+  .card-team {
+    width: 220px;
+    height: 300px;
+  }
+
+  .card-title-team {
+    font-size: 1.8em;
+  }
+
+  .card-subtitle-team {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 992px) {
+  .team-cards {
+    justify-content: center;
+  }
+
+  .card-team {
+    width: 200px;
+    height: 280px;
+  }
+
+  .card-title-team {
+    font-size: 1.6em;
+  }
+
+  .card-subtitle-team {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-team {
+    width: 180px;
+    height: 260px;
+  }
+
+  .card-title-team {
+    font-size: 1.4em;
+  }
+
+  .card-subtitle-team {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-team {
+    width: 160px;
+    height: 240px;
+  }
+
+  .card-title-team {
+    font-size: 1.2em;
+  }
+
+  .card-subtitle-team {
+    font-size: 0.7em;
+  }
+
+  .card-avatar-team {
+    --size: 70px;
+  }
+}
 /* END PAGE TEAM */
 
 
@@ -771,6 +778,8 @@ li {
   align-items: center;
   margin-top: 10%;
   margin-left: 20%;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .contact-form {
@@ -806,7 +815,8 @@ html.nuit .form-contact {
   position: relative;
 }
 
-.form-contact label input {
+.form-contact label input,
+.form-contact label textarea {
   width: 100%;
   padding: 10px 10px 20px 10px;
   outline: 0;
@@ -815,11 +825,13 @@ html.nuit .form-contact {
   background-color: transparent;
 }
 
-html.nuit .form-contact label input {
+html.nuit .form-contact label input,
+html.nuit .form-contact label textarea {
   border: 1px solid $bg-light-font-night;
 }
 
-.form-contact label input + span {
+.form-contact label input + span,
+.form-contact label textarea + span {
   position: absolute;
   left: 10px;
   top: 15px;
@@ -829,69 +841,32 @@ html.nuit .form-contact label input {
   transition: 0.3s ease;
 }
 
-html.nuit .form-contact label input + span {
+html.nuit .form-contact label input + span,
+html.nuit .form-contact label textarea + span {
   color: $title-icons-night;
 }
 
-.form-contact label input:placeholder-shown + span {
+.form-contact label input:placeholder-shown + span,
+.form-contact label textarea:placeholder-shown + span {
   top: 15px;
   font-size: 0.9em;
 }
 
 .form-contact label input:focus + span,
-.form-contact label input:valid + span {
+.form-contact label input:valid + span,
+.form-contact label textarea:focus + span,
+.form-contact label textarea:valid + span {
   top: 30px;
   font-size: 0.7em;
   font-weight: 600;
 }
 
-.form-contact label input:valid + span {
-  color: $title-icons-light;
-}
-
-html.nuit .form-contact label input:valid + span {
-  color: $title-icons-night;
-}
-
-textarea {
-  width: 100%;
-  padding: 10px 10px 20px 10px;
-  outline: 0;
-  border: 1px solid $font-light;
-  border-radius: 5px;
-  background-color: transparent;
-}
-
-html.nuit textarea {
-  border: 1px solid $bg-light-font-night;
-}
-
-.form-contact label textarea + span {
-  position: absolute;
-  left: 10px;
-  top: 50px;
-  color: grey;
-  font-size: 0.9em;
-  cursor: text;
-  transition: 0.3s ease;
-}
-
-.form-contact label textarea:placeholder-shown + span {
-  top: 40px;
-  font-size: 0.9em;
-}
-
-.form-contact label textarea:focus + span,
-.form-contact label textarea:valid + span {
-  top: 50px;
-  font-size: 0.7em;
-  font-weight: 600;
-}
-
+.form-contact label input:valid + span,
 .form-contact label textarea:valid + span {
   color: $title-icons-light;
 }
 
+html.nuit .form-contact label input:valid + span,
 html.nuit .form-contact label textarea:valid + span {
   color: $title-icons-night;
 }
@@ -916,14 +891,86 @@ html.nuit .form-contact label textarea:valid + span {
   }
 }
 
-html.nuit .ref-contact p {
-  .icon {
-    color: $title-icons-night;
-  }
+html.nuit .ref-contact p .icon {
+  color: $title-icons-night;
 }
 
 html.nuit .form-contact button {
-  color: $title-icons-night;
+  color: $bg-night;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .full-contact {
+    margin-left: 10%;
+  }
+
+  .contact-form {
+    margin-right: 20%;
+  }
+
+  .coord-contact {
+    margin-right: 10%;
+  }
+}
+
+@media (max-width: 992px) {
+  .full-contact {
+    margin-left: 5%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .coord-contact {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .full-contact {
+    margin-left: 0;
+    margin-top: 5%;
+  }
+
+  .form-contact {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .coord-contact {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .form-contact {
+    padding: 10px;
+  }
+
+  .form-contact label input,
+  .form-contact label textarea {
+    padding: 8px;
+  }
+
+  .form-contact label input + span,
+  .form-contact label textarea + span {
+    top: 10px;
+    font-size: 0.8em;
+  }
+
+  .form-contact label input:focus + span,
+  .form-contact label textarea:focus + span,
+  .form-contact label input:valid + span,
+  .form-contact label textarea:valid + span {
+    top: 20px;
+    font-size: 0.6em;
+  }
 }
 /* END PAGE CONTACT */
 
@@ -936,26 +983,27 @@ html.nuit .form-contact button {
   align-items: center;
   margin: 2%;
   justify-content: space-around;
+  flex-wrap: wrap;
+}
 
-  .label {
-    font-weight: bold;
-    margin-left: 1%;
-  }
+.label {
+  font-weight: bold;
+  margin-left: 1%;
+}
 
-  .select {
-    width: 80%;
-    padding: 2%;
-    border: 1px solid $title-icons-light;
-    border-radius: 4px;
-    background-color: $bg-light-font-night;
-  }
+.select {
+  width: 80%;
+  padding: 2%;
+  border: 1px solid $title-icons-light;
+  border-radius: 4px;
+  background-color: $bg-light-font-night;
+}
 
-  .select:focus {
-    border-color: $font-light;
-    outline: none;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
-    color: $title-icons-light;
-  }
+.select:focus {
+  border-color: $font-light;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
+  color: $title-icons-light;
 }
 
 html.nuit .form-wrapper {
@@ -969,9 +1017,26 @@ html.nuit .form-wrapper {
     color: $title-icons-night;
   }
 }
-/* end filters */ 
 
-/* start cards */
+/* Media Queries Form Wrapper */
+@media (max-width: 768px) {
+  .form-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 2% 0;
+  }
+
+  .select {
+    width: 100%;
+    padding: 1%;
+  }
+
+  .label {
+    margin-left: 0;
+  }
+}
+
+/* Cards Container */
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -1002,7 +1067,7 @@ html.nuit .restaurant-card {
 
 .restaurant-image {
   width: 100%;
-  height: auto;
+  height: 45%;
   border-bottom: 0.5px solid $title-icons-light;
   object-fit: cover;
 }
@@ -1085,167 +1150,419 @@ html.nuit .restaurant-link-text {
 html.nuit .restaurant-link-icon {
   color: $title-icons-night;
 }
+
+/* Media Queries Cards Container */
+@media (max-width: 1200px) {
+  .restaurant-card {
+    max-width: 18rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .restaurant-card {
+    max-width: 16rem;
+  }
+
+  .card-container {
+    margin: 2%;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .restaurant-card {
+    max-width: 14rem;
+    height: auto;
+  }
+
+  .restaurant-image {
+    height: 40%;
+  }
+
+  .restaurant-content {
+    padding: 0.75rem;
+  }
+
+  .restaurant-title {
+    font-size: 1rem;
+  }
+
+  .restaurant-description {
+    font-size: 0.75rem;
+    max-height: 4rem;
+  }
+
+  .restaurant-city,
+  .restaurant-food {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .restaurant-card {
+    max-width: 100%;
+  }
+
+  .restaurant-image {
+    height: 35%;
+  }
+
+  .restaurant-title {
+    font-size: 0.875rem;
+  }
+
+  .restaurant-description {
+    font-size: 0.7rem;
+    max-height: 5rem;
+  }
+}
 /* end cards */
 /* END PAGE RESTAU LIST */
 
 
 
 
-/* START CREATE RESTAURANT */
-.create-form {
-  width: 50%;
-  margin: 2%;
-
-  label {
-    margin-right: 1%;
-  }
-
-  input {
-    color: $title-icons-light;
-    background-color: $bg-light-font-night;
-    border: 1px solid $font-light;
-    padding: 1%;
-  }
-
-  select {
-    color: $title-icons-light;
-    background-color: $bg-light-font-night;
-  }
-
-  textarea {
-    color: $title-icons-light;
-  }
-
-  button {
-    color: $font-light;
-    border: 1px solid $title-icons-light;
-    border-radius: 15px;
-    padding: 1%;
-    margin-top: 2%;
-  }
+/* START CREATE + EDIT RESTAURANT FORMS */
+.create-form-container, .edit-form-container {
+  margin-top: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
 }
 
-html.nuit .create-form {
-  input {
-    color: $title-icons-night;
-    background-color: $bg-night;
-    border: 1px solid $bg-light-font-night;
-  }
-
-  select {
-    color: $title-icons-night;
-    background-color: $bg-night;
-  }
-
-  textarea {
-    color: $title-icons-night;
-  }
-
-  button {
-    color: $bg-light-font-night;
-    border: 1px solid $title-icons-night;
-  }
+.create-form, .edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+  background-color: #fff;
+  padding: 4%;
+  border-radius: 20px;
+  position: relative;
+  align-items: center;
 }
-/* END CREATE RESTAURANT */
 
+html.nuit .create-form, html.nuit .edit-form {
+  background-color: $bg-light-font-night;
+}
 
+.tit-pag {
+  font-size: 150%;
+  color: $title-icons-light;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 20%;
+}
 
-/* START EDIT RESTAURANT */
-.form-edit-restau {
-  margin: 2%;
-  width: 50%;
+html.nuit .tit-pag {
+  color: $title-icons-night;
+  font-size: 150%;
+  font-weight: 600;
+}
 
-  label {
-    margin-right: 1%;
-  }
+.tit-pag::before, .tit-pag::after {
+  position: absolute;
+  content: "";
+  height: 16%;
+  width: 16%;
+  border-radius: 50%;
+  left: 0;
+  background-color: $title-icons-light;
+}
 
-  input {
-    margin-left: 1%;
-    color: $title-icons-light;
+html.nuit .tit-pag::before {
+  background-color: $title-icons-night;
+}
+
+html.nuit .tit-pag::after {
+  background-color: $title-icons-night;
+}
+
+.tit-pag::before {
+  width: 2%;
+  height: 2%;
+  background-color: $bg-light-font-night;
+}
+
+html.nuit .tit-pag::before {
+  background-color: $bg-light-font-night;
+}
+
+.tit-pag::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  margin-top: 8%;
+
+  input, textarea, select {
     border: 1px solid $font-light;
-    background-color: $bg-light-font-night;
-    border-radius: 5px;
-    margin-top: 1%;
-    padding: 0.5%;
-  }
-
-  button {
-    margin-top: 2%;
-    color: $font-light;
-    border: 1px solid $title-icons-light;
     border-radius: 10px;
-    padding: 1%;
-  }
-
-  .textarea {
     margin-top: 1%;
-  }
-
-  textarea {
+    padding: 10px;
     color: $title-icons-light;
   }
-}
-
-html.nuit .form-edit-restau {
-  input {
-    color: $title-icons-night;
-    border: 1px solid $bg-light-font-night;
-    background-color: $bg-night;
-  }
-
-  button {
-    color: $bg-light-font-night;
-    border: 1px solid $title-icons-night;
-  }
 
   textarea {
+    resize: vertical;
+  }
+}
+
+input#file-upload-button {
+  background-color: transparent;
+}
+
+html.nuit .form-group {
+  label {
+    color: $bg-night;
+  }
+
+  input, textarea, select {
+    border: 1px solid $bg-night;
+    background-color: transparent;
     color: $title-icons-night;
   }
 }
-/* END EDIT RESTAURANT */
+
+.btn-sub {
+  margin-top: 10%;
+  text-align: center;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+/* END CREATE + EDIT RESTAURANT FORMS */
 
 
 
 /* START EDIT PROFILES */
+.edit-profile-container {
+  margin-top: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
 .edit-profile-form {
-  label {
-    margin-right: 1%;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+  background-color: #fff;
+  padding: 4%;
+  border-radius: 20px;
+  position: relative;
+  align-items: center;
+}
+
+html.nuit .edit-profile-form {
+  background-color: $bg-light-font-night;
+}
+
+.tit-pag {
+  font-size: 150%;
+  color: $title-icons-light;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 20%;
+}
+
+html.nuit .tit-pag {
+  color: $title-icons-night;
+  font-size: 150%;
+  font-weight: 600;
+}
+
+.tit-pag::before, .tit-pag::after {
+  position: absolute;
+  content: "";
+  height: 16%;
+  width: 16%;
+  border-radius: 50%;
+  left: 0;
+  background-color: $title-icons-light;
+}
+
+html.nuit .tit-pag::before {
+  background-color: $title-icons-night;
+}
+
+html.nuit .tit-pag::after {
+  background-color: $title-icons-night;
+}
+
+.tit-pag::before {
+  width: 2%;
+  height: 2%;
+  background-color: $bg-light-font-night;
+}
+
+html.nuit .tit-pag::before {
+  background-color: $bg-light-font-night;
+}
+
+.tit-pag::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  margin-top: 8%;
 
   input {
-    color: $title-icons-light;
-    border: 1px solid $title-icons-light;
-    background-color: $bg-light-font-night;
-    border-radius: 5px;
+    border: 1px solid $font-light;
+    border-radius: 10px;
     margin-top: 1%;
   }
 }
 
-html.nuit .edit-profile-form {
+html.nuit .form-group {
+  label {
+    color: $bg-night;
+  }
+
   input {
-    color: $title-icons-night;
-    border: 1px solid $title-icons-night;
-    background-color: $bg-night;
+    border: 1px solid $bg-night;
+    background-color: transparent;
   }
 }
 
-.btn-edit {
-  margin-top: 2%;
-  color: $title-icons-light;
+.btn-sub {
+  margin-top: 10%;
+  text-align: center;
+}
 
-  .btn-del {
-    margin-left: 0.3%;
-  }
+.btn-edit {
+  margin-top: 8%;
 }
 
 html.nuit .btn-edit {
   color: $title-icons-night;
+}
+
+.btn-del {
+  color: $font-light;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+html.nuit .btn-del {
+  color: $title-icons-night;
+}
+
+.btn-del:hover {
+  text-decoration: underline $title-icons-light;
+}
+
+html.nuit .btn-del:hover {
+  text-decoration: underline $bg-night;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
 }
 /* END EDIT PROFILES */
 
 
 
 /* START ADMIN PROFILE */
+.button-card-container {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+  align-items: center;
+}
+
+.button-card {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  max-width: 100%;
+  background-color: #fff;
+  padding: 4%;
+  border-radius: 20px;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+html.nuit .button-card {
+  background-color: $bg-light-font-night;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  a {
+    width: 80%;
+    padding: 10px 0;
+    text-align: center;
+    background-color: $title-icons-light;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  a:hover, button:hover {
+    background-color: darken($title-icons-light, 10%);
+  }
+
+  html.nuit a, html.nuit button {
+    background-color: $title-icons-night;
+  }
+
+  html.nuit a:hover, html.nuit button:hover {
+    background-color: lighten($title-icons-night, 10%);
+  }
+}
+
+html.nuit .button-wrapper {
+  a {
+    background-color: $title-icons-night;
+    color: $bg-light-font-night;
+  }
+
+  a:hover, button:hover {
+    background-color: darken($title-icons-night, 10%);
+  }
+}
+
 .link-create {
   margin: 2%;
 
@@ -1267,58 +1584,37 @@ html.nuit .link-create {
   margin: 2%;
 }
 
-.cards-admin {
-  margin: 2%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.solo-card {
-  border: 1px solid $title-icons-light;
-  margin-top: 2%;
-  padding: 2%;
-
-  img {
-    margin-bottom: 2%;
-  }
-
-  .title-resa {
-    color: $title-icons-light;
-    margin-bottom: 1%;
-    text-align: center;
-  }
-}
-
-html.nuit .solo-card {
-  border: 1px solid $title-icons-night;
-
-  .title-resa {
-    color: $title-icons-night;
-  }
-}
-
-.title-solo {
-  text-align: center;
-  margin-bottom: 2%;
-}
-
 .your-restau {
   color: $title-icons-light;
   font-size: large;
   text-align: center;
 }
 
+.admin-cards {
+  margin-top: 0%;
+}
+
 html.nuit .your-restau {
   color: $title-icons-night;
+}
+
+.img-restau-admin {
+  width: 100%;
+  height: 35%;
+  object-fit: cover;
+  border-bottom: 0.5px solid $title-icons-light;
+}
+
+html.nuit .img-restau-admin {
+  border-bottom: 0.5px solid $title-icons-night;
 }
 
 .btn-admin {
   margin-top: 2%;
   margin-bottom: 2%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-evenly;
   color: $title-icons-light;
   cursor: pointer;
 }
@@ -1327,54 +1623,126 @@ html.nuit .btn-admin {
   color: $title-icons-night;
 }
 
+.reserv-admin {
+  margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-resa {
+  text-align: center;
+  margin-bottom: 4%;
+  color: $title-icons-light;
+}
+
+html.nuit .title-resa {
+  color: $title-icons-night;
+}
+
 .div-resa {
   display: flex;
   justify-content: space-between;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .button-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+  }
+
+  .button-wrapper a {
+    width: 90%;
+    padding: 8px 0;
+    font-size: 14px;
+  }
+
+  .img-restau-admin {
+    height: 30%;
+  }
+
+  .btn-admin {
+    flex-direction: column;
+    align-items: center;
+    font-size: 90%;
+  }
+
+  .title-resa {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .button-card {
+    gap: 10px;
+    padding: 1.5%;
+  }
+
+  .button-wrapper a {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .img-restau-admin {
+    height: 25%;
+  }
+
+  .btn-admin {
+    flex-direction: column;
+    align-items: center;
+    font-size: 80%;
+  }
+
+  .reserv-admin {
+    margin-top: 10%;
+  }
+
+  .title-resa {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .button-card {
+    flex-direction: column;
+    padding: 1%;
+  }
+
+  .button-wrapper a {
+    width: 100%;
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .img-restau-admin {
+    height: 20%;
+  }
+
+  .btn-admin {
+    flex-direction: column;
+    align-items: center;
+    font-size: 70%;
+  }
+
+  .reserv-admin {
+    margin-top: 5%;
+  }
+
+  .title-resa {
+    font-size: 0.9em;
+  }
 }
 /* END ADMIN PROFILE */
 
 
 
 /* START USER PROFILE */
-.favs {
-  margin: 2%;
-  border: 1px solid $font-light;
-  padding: 1%;
-  width: 20%;
-
-  h2 {
-    color: $title-icons-light;
-  }
-}
-
-html.nuit .favs {
-  border: 1px solid $bg-light-font-night;
-
-  h2 {
-    color: $title-icons-night;
-  }
-}
-
-.restau-fav {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 4%;
-}
-
-.btn-edit-user {
-  margin: 2%;
-  text-decoration: underline;
-}
-
-.btn-fav {
-  color: $title-icons-light;
-}
-
-html.nuit .btn-fav {
-  color: $title-icons-night;
-}
-
 .res-us {
+  display: flex;
+  flex-direction: column;
   margin: 4%;
 
   h2 {
@@ -1388,109 +1756,726 @@ html.nuit .res-us {
   }
 }
 
-.user-resa {
+.li-resa {
+  margin-bottom: 8%;
+}
+
+.card-resa {
+  width: 100%;
+  max-width: 80%;
+  height: auto;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  backdrop-filter: blur(10px);
+  transition: 0.5s ease-in-out;
+  margin: 2% 0;
+}
+
+.card-resa:hover {
+  transform: scale(1.05);
+}
+
+.textBox-resa {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 90px);
+  margin-left: 2%;
+  color: $font-light;
+  font-family: inherit;
+  padding: 2%;
+}
+
+html.nuit .textBox-resa {
+  color: $bg-night;
+}
+
+.span-resa {
+  font-size: 100%;
+}
+
+.h1-resa {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn-resa {
+  font-size: 110%;
+}
+
+.favs {
+  display: flex;
+  flex-direction: column;
+  margin: 4%;
+
+  h2 {
+    color: $title-icons-light;
+  }
+}
+
+html.nuit .favs {
+  h2 {
+    color: $title-icons-night;
+  }
+}
+
+.restau-fav {
+  margin-bottom: 8%;
+  width: 100%;
+  max-width: 80%;
+  height: auto;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(10px);
+  transition: 0.5s ease-in-out;
+  margin: 2% 0;
+  padding: 2%;
+  color: $font-light;
+  font-family: inherit;
+}
+
+.restau-fav:hover {
+  transform: scale(1.05);
+}
+
+html.nuit .restau-fav {
+  color: $bg-night;
+}
+
+.btn-fav {
+  font-size: 110%;
+  font-weight: lighter;
+  color: $title-icons-light;
+}
+
+html.nuit .btn-fav {
+  color: $title-icons-night;
+}
+
+.title-pages {
+  margin-bottom: 0%;
+}
+
+.button-card-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4%;
+}
+
+.button-card {
+  background-color: #fff;
+  padding: 2%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-edit-user {
+  background-color: $title-icons-light;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+html.nuit .btn-edit-user {
+  background-color: $title-icons-night;
+  color: $bg-light-font-night;
+}
+
+.btn-edit-user:hover {
+  background-color: #fe4c00dc;
+}
+
+html.nuit .btn-edit-user:hover {
+  background-color: #fcd256;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .card-resa, .restau-fav {
+    max-width: 90%;
+  }
+
+  .textBox-resa {
+    width: calc(100% - 60px);
+  }
+
+  .span-resa {
+    font-size: 90%;
+  }
+
+  .h1-resa {
+    font-size: 14px;
+  }
+
+  .btn-resa {
+    font-size: 100%;
+  }
+
+  .btn-fav {
+    font-size: 100%;
+  }
+
+  .button-card {
+    padding: 1.5%;
+  }
+
+  .btn-edit-user {
+    padding: 8px 16px;
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .res-us, .favs {
+    margin: 2%;
+  }
+
+  .card-resa, .restau-fav {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1% 2%;
+  }
+
+  .textBox-resa {
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .span-resa {
+    font-size: 80%;
+  }
+
+  .h1-resa {
+    font-size: 12px;
+  }
+
+  .btn-resa, .btn-fav {
+    font-size: 90%;
+  }
+
+  .button-card {
+    padding: 1%;
+  }
+
+  .btn-edit-user {
+    padding: 6px 12px;
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .res-us, .favs {
+    margin: 1%;
+  }
+
+  .card-resa, .restau-fav {
+    max-width: 100%;
+    padding: 1% 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .textBox-resa {
+    width: 100%;
+    margin: 0;
+  }
+
+  .span-resa {
+    font-size: 70%;
+  }
+
+  .h1-resa {
+    font-size: 10px;
+  }
+
+  .btn-resa, .btn-fav {
+    font-size: 80%;
+  }
+
+  .button-card {
+    padding: 0.5%;
+  }
+
+  .btn-edit-user {
+    padding: 4px 8px;
+    font-size: 70%;
+  }
 }
 /* END USER PROFILE */
 
 
 
-/* START FORMS */
-.login-form {
-  input {
-    margin-left: 1%;
-    color: $title-icons-light;
-    border: 1px solid $title-icons-light;
-    background-color: $bg-light-font-night;
-    border-radius: 5px;
-    margin-top: 1%;
-  }
-
-  button {
-    color: $font-light;
-    border: 1px solid $title-icons-light;
-    border-radius: 15px;
-    padding: 1%;
-    margin-top: 2%;
-  }
-
-  p {
-    margin-top: 2%;
-  }
-}
-
-html.nuit .login-form {
-  input {
-    color: $title-icons-night;
-    border: 1px solid $title-icons-night;
-    background-color: $bg-night;
-  }
-
-  button {
-    color: $bg-light-font-night;
-    border: 1px solid $title-icons-night;
-  }
-}
-
-.form-ad {
-  width: 15%;
-}
-
-.form-group {
-  label {
-    margin-top: 1%;
-  }
-}
-
+/* START SIGNUP FORMS */
 .signup-form {
-  input {
-    margin-left: 1%;
-    color: $title-icons-light;
-    border: 1px solid $title-icons-light;
-    background-color: $bg-light-font-night;
-    border-radius: 5px;
-    margin-top: 1%;
-    width: 20%;
-  }
-
-  label {
-    margin-top: 1%;
-  }
-
-  button {
-    color: $font-light;
-    border: 1px solid $title-icons-light;
-    border-radius: 15px;
-    padding: 1%;
-    margin-top: 2%;
-  }
-
-  p {
-    margin-top: 2%;
-  }
+  margin-top: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-html.nuit .signup-form {
-  input {
-    color: $title-icons-night;
-    border: 1px solid $title-icons-night;
-    background-color: $bg-night;
-  }
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+  background-color: #fff;
+  padding: 4%;
+  border-radius: 20px;
+  position: relative;
+  align-items: center;
+}
 
-  button {
-    color: $bg-light-font-night;
-    border: 1px solid $title-icons-night;
+html.nuit .form {
+  background-color: $bg-light-font-night;
+}
+
+.title {
+  font-size: 150%;
+  color: $title-icons-light;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 20%;
+}
+
+html.nuit .title {
+  color: $title-icons-night;
+}
+
+.title::before, .title::after {
+  position: absolute;
+  content: "";
+  height: 16%;
+  width: 16%;
+  border-radius: 50%;
+  left: 0;
+  background-color: $title-icons-light;
+}
+
+html.nuit .title::before {
+  background-color: $title-icons-night;
+}
+
+html.nuit .title::after {
+  background-color: $title-icons-night;
+}
+
+.title::before {
+  width: 2%;
+  height: 2%;
+  background-color: $bg-light-font-night;
+}
+
+html.nuit .title::before {
+  background-color: $bg-light-font-night
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.message, .signin {
+  color: $font-light;
+  font-size: 80%;
+  margin-top: 4%;
+}
+
+html.nuit .message {
+  color: $title-icons-night;
+}
+
+html.nuit .signin {
+  color: $title-icons-night;
+}
+
+.signin {
+  text-align: center;
+}
+
+.signin a {
+  color: $font-light;
+}
+
+html.nuit .signin a {
+  color: $title-icons-night;
+}
+
+.signin a:hover {
+  text-decoration: underline $title-icons-light;
+}
+
+html.nuit .signin a:hover {
+  text-decoration: underline $bg-night;
+}
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  width: 100%;
+  padding: 6%;
+  outline: 0;
+  border: 1px solid $font-light;
+  border-radius: 10px;
+  margin-top: 6%;
+}
+
+html.nuit .form label .input {
+  border: 1px solid $bg-night;
+  background-color: transparent;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  background-color: $title-icons-light;
+  padding: 4%;
+  border-radius: 10px;
+  color: $bg-light-font-night;
+  font-size: 90%;
+  transition: .3s ease;
+  margin-top: 6%;
+  width: 100%;
+}
+
+html.nuit .submit {
+  background-color: $title-icons-night;
+  color: $bg-night;
+}
+
+.submit:hover {
+  background-color: $bg-light-font-night;
+  color: $title-icons-light;
+  border: 1px solid $title-icons-light;
+}
+
+html.nuit .submit:hover {
+  background-color: $bg-night;
+  color: $title-icons-night;
+  border: 1px solid $title-icons-night;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
   }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+/* END SIGNUP FORMS */
+
+
+
+/* START LOGOUT FORM */
+.logout-form-container {
+  margin-top: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
 }
 
 .logout-form {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+  background-color: #fff;
+  padding: 4%;
+  border-radius: 20px;
+  position: relative;
+  align-items: center;
 }
-/* END FORMS */
 
+html.nuit .logout-form {
+  background-color: $bg-light-font-night;
+}
+
+.submit {
+  margin-top: 10%;
+  text-align: center;
+}
+
+html.nuit .submit {
+  color: $bg-light-font-night;
+  border-color: $bg-night;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+/* END LOGOUt FORM */
+
+
+
+/* START LOGIN FORMS */
+.login-form-container {
+  margin-top: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+  background-color: #fff;
+  padding: 4%;
+  border-radius: 20px;
+  position: relative;
+  align-items: center;
+}
+
+html.nuit .login-form {
+  background-color: $bg-light-font-night;
+}
+
+.tit-pag {
+  font-size: 150%;
+  color: $title-icons-light;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 20%;
+}
+
+html.nuit .tit-pag {
+  color: $title-icons-night;
+  font-size: 150%;
+  font-weight: 600;
+}
+
+.tit-pag::before, .tit-pag::after {
+  position: absolute;
+  content: "";
+  height: 16%;
+  width: 16%;
+  border-radius: 50%;
+  left: 0;
+  background-color: $title-icons-light;
+}
+
+html.nuit .tit-pag::before {
+  background-color: $title-icons-night;
+}
+
+html.nuit .tit-pag::after {
+  background-color: $title-icons-night;
+}
+
+.tit-pag::before {
+  width: 2%;
+  height: 2%;
+  background-color: $bg-light-font-night;
+}
+
+html.nuit .tit-pag::before {
+  background-color: $bg-light-font-night;
+}
+
+.tit-pag::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  margin-top: 8%;
+
+  input {
+    border: 1px solid $font-light;
+    border-radius: 10px;
+    margin-top: 1%;
+  }
+}
+
+html.nuit .form-group {
+  label {
+    color: $bg-night;
+  }
+
+  input {
+    border: 1px solid $bg-night;
+    background-color: transparent;
+  }
+}
+
+.btn-sub {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.log-links {
+  margin-top: 8%;
+}
+
+html.nuit .log-links {
+  color: $title-icons-night;
+}
+
+.links {
+  color: $font-light;
+  text-decoration: none;
+}
+
+html.nuit .links {
+  color: $title-icons-night;
+}
+
+.links:hover {
+  text-decoration: underline $title-icons-light;
+}
+
+html.nuit .links:hover {
+  text-decoration: underline $bg-night;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+/* END LOGIN FORMS */
+
+
+
+/* START FORGOT PASSWORD */
+.forgot-pass {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60vh;
+  justify-content: center;
+}
+
+.forgot-form {
+  max-width: 100%;
+  background-color: #fff;
+  padding: 6% 8%;
+  font-size: 90%;
+  font-family: inherit;
+  color: $font-light;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
+}
+
+html.nuit .forgot-form {
+  color: $bg-night;
+}
+
+.forgot-form h1.title-pages {
+  font-size: 180%;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+.forgot-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.forgot-form label {
+  display: block;
+  margin-bottom: 2%;
+}
+
+.forgot-form input {
+  width: 100%;
+  padding: 4%;
+  border-radius: 10px;
+  font-family: inherit;
+  border: 1px solid $title-icons-light;
+  box-sizing: border-box;
+  color: $title-icons-light;
+}
+
+html.nuit .forgot-form input {
+  border: 1px solid $title-icons-night;
+  color: $title-icons-night;
+}
+
+.forgot-form input::placeholder {
+  opacity: 0.5;
+}
+
+.forgot-form input:focus {
+  outline: none;
+  border-color: $font-light;
+}
+
+html.nuit .forgot-form input:focus {
+  border-color: $bg-night;
+}
+
+.forgot-form button {
+  margin-top: 8%;
+  border: 1px solid $title-icons-light;
+  background-color: $title-icons-light;
+  padding: 3%;
+  color: $bg-light-font-night;
+  border-radius: 10px;
+}
+
+html.nuit .forgot-form button {
+  border: 1px solid $title-icons-night;
+  background-color: $title-icons-night;
+  color: $bg-night;
+}
+
+.forgot-form .btn-forgot:hover {
+  background-color: $font-light;
+  border-color: $font-light;
+}
+
+html.nuit .forgot-form .btn-forgot:hover {
+  background-color: $bg-night;
+  border-color: $bg-night;
+  color: $bg-light-font-night;
+}
+/* END FORGOT PASSWORD */
 
 
 /* START HOME */
@@ -1563,6 +2548,7 @@ html.nuit .signup-form {
   margin-top: 4%;
   margin-right: 8%;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .div-pic {
@@ -1583,8 +2569,11 @@ html.nuit .signup-form {
   justify-content: center;
 }
 
-.lead {
+.lead, .lead-easier, .lead-eat, .lead-cities, .lead-come {
   font-size: 250%;
+}
+
+.lead {
   color: $font-light;
 }
 
@@ -1593,13 +2582,11 @@ html.nuit .lead {
 }
 
 .lead-easier {
-  font-size: 250%;
   font-weight: 750;
   color: $title-icons-light;
 }
 
 .lead-eat {
-  font-size: 250%;
   color: $title-icons-light;
 }
 
@@ -1612,13 +2599,11 @@ html.nuit .lead-eat {
 }
 
 .lead-cities {
-  font-size: 250%;
   font-weight: 750;
   color: $title-icons-light;
 }
 
 .lead-come {
-  font-size: 250%;
   color: $title-icons-light;
 }
 
@@ -1636,143 +2621,246 @@ html.nuit .lead-come {
   align-items: center;
   flex-direction: column;
 }
+
+@media (max-width: 1200px) {
+  .hero-index {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+  }
+
+  .hero-pic {
+    width: 80%;
+  }
+
+  .lead, .lead-easier, .lead-eat, .lead-cities, .lead-come {
+    font-size: 200%;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-pic {
+    width: 100%;
+  }
+
+  .lead, .lead-easier, .lead-eat, .lead-cities, .lead-come {
+    font-size: 180%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-pic {
+    width: 100%;
+  }
+
+  .lead, .lead-easier, .lead-eat, .lead-cities, .lead-come {
+    font-size: 160%;
+  }
+
+  .text-cities {
+    margin: 5%;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-pic {
+    width: 100%;
+  }
+
+  .lead, .lead-easier, .lead-eat, .lead-cities, .lead-come {
+    font-size: 140%;
+  }
+
+  .text-cities {
+    margin-top: 5%;
+  }
+}
+
 /* end hero */
 /* END HOME */
 
 
 
-
-
-
-
-/* START DETAILS RESTAURANTS ANELISE */
+/* START DETAILS RESTAURANTS */
+/* start card menu + details */
 .name-restau {
   color: $title-icons-light;
 }
 
-.card-details {
-  border: 1px solid $title-icons-light;
-  border-radius: 15px;
-  padding: 2%;
-  margin: 2%;
-}
-
-html.nuit .card-details {
-  border: 1px solid $title-icons-night;
-
-  h1 {
-    color: $title-icons-night;
-  }
-}
-
-.menu-details {
-  color: $title-icons-light;
-  padding: 2%;
-  margin: 2%;
-}
-
-html.nuit .menu-details {
+html.nuit .name-restau {
   color: $title-icons-night;
 }
 
-.resa-details {
-  padding: 2%;
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.menu-details {
+  width: 40%;
+
+  img {
+    border-radius: 20px;
+    border: 2px solid $title-icons-light;
+  }
+}
+
+html.nuit .menu-details {
+  img {
+    border: 2px solid $title-icons-night;
+  }
+}
+
+.card-details {
+  margin-top: 4%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.text-content {
+  width: 40%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.text-content:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-content {
   margin: 2%;
 
-  h2 {
-    color: $title-icons-light;
+  .name-restau {
+    margin-bottom: 2%;
+    text-align: center;
   }
-}
 
-html.nuit .resa-details {
-  h2 {
-    color: $title-icons-night;
+  p {
+    margin-top: 2%;
   }
-}
-
-.resa-form {
-  margin-top: 1%;
-
-  input {
-    margin-left: 1%;
-    color: $title-icons-light;
-    background-color: $bg-light-font-night;
-  }
-}
-
-.people {
-  border: 1px solid $title-icons-light;
-  border-radius: 5px;
-}
-
-html.nuit .people {
-  border: 1px solid $title-icons-night;
-}
-
-html.nuit .resa-form {
-  input {
-    color: $title-icons-night;
-    background-color: $bg-night;
-  }
-}
-
-.btn-resa {
-  margin: 2%;
 
   button {
-    border: 1px solid $title-icons-light;
-    padding: 1%;
-    cursor: pointer;
-    border-radius: 15px;
+    margin-top: 2%;
   }
 }
 
-html.nuit .btn-resa {
-  margin: 2%;
+@media (max-width: 1200px) {
+  .menu-details {
+    width: 60%;
+  }
 
-  button {
-    border: 1px solid $title-icons-night;
-    padding: 1%;
-    cursor: pointer;
-    border-radius: 15px;
+  .text-content {
+    width: 60%;
   }
 }
+
+@media (max-width: 992px) {
+  .menu-details {
+    width: 80%;
+  }
+
+  .text-content {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-details {
+    width: 100%;
+  }
+
+  .text-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .menu-details {
+    width: 100%;
+  }
+
+  .text-content {
+    width: 100%;
+  }
+
+  .card-content {
+    margin: 5%;
+  }
+}
+/* end card menu + details */
+
+/* start reservations + comments section */
+.tabs {
+  margin-top: 8%;
+  display: flex;
+  align-items: center;
+}
+
+.ant-tabs-tab-btn {
+  color: $title-icons-light;
+}
+
+html.nuit .ant-tabs-tab-btn {
+  color: $title-icons-night;
+}
+
 
 .comment {
-  display: flex;
-  gap: 1%;
+  margin-top: 2%;
 }
 
 .comments-section {
-  margin: 2%;
-  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+
+  p {
+    color: $font-light;
+  }
 
   h2 {
     color: $title-icons-light;
-    margin-bottom: 1%;
   }
 }
 
 html.nuit .comments-section {
+  p {
+    color: $bg-light-font-night;
+  }
+
   h2 {
     color: $title-icons-night;
   }
 }
 
-.btn-comm {
-  color: $title-icons-light;
-}
-
-html.nuit .btn-comm {
-  color: $title-icons-night;
-}
-
 .form-comm {
-  margin-top: 4%;
-  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8%;
+
+    h2 {
+      margin-bottom: 2%;
+      text-align: center;
+    }
 
   textarea {
+    border-color: $font-light;
     color: $title-icons-light;
+    background-color: $bg-light-font-night;
+  }
+
+  textarea::placeholder {
+    color: $font-light;
+    font-size: 80%;
+    font-style: italic;
   }
 
   button {
@@ -1782,7 +2870,13 @@ html.nuit .btn-comm {
 
 html.nuit .form-comm {
   textarea {
+    border-color: $bg-light-font-night;
     color: $title-icons-night;
+    background-color: $bg-night;
+  }
+
+  textarea::placeholder {
+    color: $bg-light-font-night;
   }
 
   button {
@@ -1790,64 +2884,99 @@ html.nuit .form-comm {
   }
 }
 
-.log-comm {
-  margin-top: 4%;
+:where(.css-dev-only-do-not-override-m4timi).ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: $title-icons-light;
 }
-/* END DETAILS RESTAURANTS ANELISE */
+
+html.nuit :where(.css-dev-only-do-not-override-m4timi).ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: $title-icons-night;
+}
 
 
-
-
-/* PAGE DÉTAIL DU RESTAURANT NICO */
-.details-container {
+.resa-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 20px;
+  margin-top: 4%;
+
+  label {
+    color: $font-light;
+    background-color: transparent;
+  }
+
+  .input-number {
+    border: 1px solid $title-icons-light;
+    background-color: $bg-light-font-night;
+    color: $title-icons-light;
+    margin-bottom: 2%;
+  }
+
+  .input-time {
+    border: 1px solid $title-icons-light;
+    border-radius: 8px;
+    height: 34px;
+    background-color: $bg-light-font-night;
+    margin-top: 2%;
+    margin-bottom: 10%;
+  }
 }
 
-.restaurant-info {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
+html.nuit .resa-form {
+  label {
+    color: $bg-light-font-night;
+    background-color: transparent;
+  }
+
+  .input-number {
+    color: $title-icons-night;
+    border: 1px solid $title-icons-night;
+    background-color: $bg-night;
+  }
+
+  .input-time {
+    border: 1px solid $title-icons-night;
+    border-radius: 8px;
+    height: 34px;
+    background-color: $bg-night;
+  }
 }
 
-.restaurant-info img {
-  width: 600px; 
-  height: auto;
-  margin-right: 20px;
-  border-radius: 8px;
+.btn-resa {
+
+  button {
+    border: 1px solid $title-icons-light;
+    padding: 2%;
+    cursor: pointer;
+    border-radius: 10px;
+    color: $title-icons-light;
+  }
 }
 
-.restaurant-details {
-  flex: 1;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+html.nuit .btn-resa {
+  margin: 2%;
 
-.restaurant-details h1 {
-  margin-top: 0;
+  button {
+    border: 1px solid $title-icons-night;
+    padding: 2%;
+    cursor: pointer;
+    border-radius: 10px;
+    color: $bg-light-font-night;
+  }
 }
 
 .reservation-section {
-  width: 100%;
-  max-width: 600px;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
+  p {
+    color: $font-light;
+  }
 }
 
-.menu-section {
-  width: 100%;
-  max-width: 600px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
+html.nuit .reservation-section {
+  p {
+    color: $bg-light-font-night;
+  }
 }
-/* PAGE DÉTAIL DU RESTAURANT NICO */
+/* end reservations + comments section */
+/* END DETAILS RESTAURANTS */
+
+
+
+
